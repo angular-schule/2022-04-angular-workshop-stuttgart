@@ -8,6 +8,23 @@
 In diesem Repository findest du während des Workshops den Quelltext unserer Beispielanwendung.
 
 
+# 🎮 NEU: RxJS Playground
+
+Lade dir das neue Projekt als ZIP-Datei herunter: [rxjs-playground.zip](https://github.com/angular-schule/2022-04-angular-workshop-stuttgart/files/8572506/rxjs-playground.zip)
+
+Danach musst Du das Projekt installieren und starten:
+
+```bash
+cd rxjs-playground
+npm install
+npm start
+```
+
+Öffne den Browser unter der URL [http://localhost:**4300**](http://localhost:4300) (!), um die Anwendung zu sehen.
+Die Übungen befinden sich im Ordner `rxjs-playground/src/app/exercises/`.
+
+
+
 # ✅ Vorbereitung
 
 Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.  
