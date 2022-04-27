@@ -1,4 +1,3 @@
-<!-- book.component.html -->
 <div class="card mb-4" *ngIf="book">
   <div class="card-body bg-light">
       <img class="img-thumbnail float-end"
@@ -11,5 +10,8 @@
     </div>
     <p>{{ book.description }}</p>
     <p><strong>Preis:</strong> {{ book.price }}</p>
+    <div>
+      <ng-container *ngFor="let x of [].constructor(book.rating)">⭐️</ng-container>
+    </div>
   </div>
 </div>
