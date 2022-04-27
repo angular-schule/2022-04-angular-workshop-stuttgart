@@ -13,5 +13,8 @@
     <div>
       <ng-container *ngFor="let x of [].constructor(book.rating)">⭐️</ng-container>
     </div>
+
+    <button class="btn btn-green" (click)="doRateUp()"> + </button>
+    <button class="btn btn-red" (click)="doRateDown()"> – </button>
   </div>
 </div>
