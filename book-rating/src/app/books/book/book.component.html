@@ -9,7 +9,7 @@
       </h2>
     </div>
     <p>{{ book.description }}</p>
-    <p><strong>Preis:</strong> {{ book.price }}</p>
+    <p><strong>Preis:</strong> {{ book.price | currency:'EUR' }}</p>
     <div>
       <ng-container *ngFor="let x of [].constructor(book.rating)">⭐️</ng-container>
     </div>
