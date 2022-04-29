@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'br-book-create',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookCreateComponent implements OnInit {
 
-  book = {
-    title: '',
-    isbn: ''
-  }
+  bookForm = new FormGroup({
+    isbn: new FormControl(''),
+    title: new FormControl(''),
+    description: new FormControl(''),
+    rating: new FormControl(1),
+    price: new FormControl(0),
+  });
 
   constructor() { }
 
@@ -18,3 +22,18 @@ export class BookCreateComponent implements OnInit {
   }
 
 }
+
+
+
+/*
+TODO:
+- Submit-Button
+- nur abschicken, wenn alle Felder gültig
+- Validierung
+- Hinweismeldungen
+
+- HTTP
+- bei Erfolg: Wegnavigieren z.B. zur Detailseite
+
+
+*/
