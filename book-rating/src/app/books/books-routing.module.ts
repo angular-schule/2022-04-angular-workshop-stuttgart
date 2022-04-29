@@ -16,8 +16,8 @@ export class BooksRoutingModule { }
 
 /*
 TODO:
-- Redirect OK
-- Links
+- Redirect ✅
+- Links ✅
 - Detailseite
   - ISBN aus der URL abrufen
   - HTTP

@@ -16,5 +16,18 @@
 
     <button class="btn btn-green" (click)="doRateUp()"> + </button>
     <button class="btn btn-red" (click)="doRateDown()"> – </button>
+
+    <!-- Array von Routensegmenten -->
+    <a [routerLink]="['/books', book.isbn]">Details</a>
+    <!-- <a [routerLink]="[book.isbn]">Details</a>-->
+
+    <!-- Expression mit String -->
+    <!--<a [routerLink]="'/books/' + book.isbn">Details</a>-->
+
+    <!-- Relativer Pfad: Expression mit String -->
+    <!-- <a [routerLink]="book.isbn">Details</a>-->
+
+    <!-- Attributschreibweise: String -->
+    <!-- <a routerLink="/books/{{ book.isbn }}">Details</a>-->
   </div>
 </div>
