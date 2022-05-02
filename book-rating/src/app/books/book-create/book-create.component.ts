@@ -38,8 +38,6 @@ export class BookCreateComponent implements OnInit {
     return !!control && control.touched && control.invalid;
     // return control ? control.touched && control.invalid : false;
     // return !!(control?.touched && control?.invalid);
-
-    control.
   }
 
   hasError(controlName: string, errorCode: string): boolean {
