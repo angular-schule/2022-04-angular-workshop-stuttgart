@@ -21,9 +21,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     BooksRoutingModule,
     ReactiveFormsModule
-  ],
-  exports: [
-    DashboardComponent
   ]
 })
 export class BooksModule { }
