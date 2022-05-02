@@ -50,7 +50,10 @@ export class BookCreateComponent implements OnInit {
     const book: Book = this.bookForm.value;
 
     this.bs.create(book).subscribe(receivedBook => {
+      // zur Detailseite
       this.router.navigate(['/books', receivedBook.isbn]); // [routerLink]="['/books', book.isbn]"
+
+      // zum Dashboard
       // this.router.navigateByUrl('/books'); // routerLink="/books"
     });
   }
