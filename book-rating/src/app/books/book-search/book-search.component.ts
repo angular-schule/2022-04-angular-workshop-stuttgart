@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, Observable, switchMap, tap } from 'rxjs';
+import { Book } from '../shared/book';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-book-search',
@@ -9,12 +11,22 @@ import { Observable } from 'rxjs';
 })
 export class BookSearchComponent implements OnInit {
 
+  results$: Observable<Book[]>;
+  loading = false;
+
   searchControl = new FormControl('');
 
-  constructor() {
+  constructor(private bs: BookStoreService) {
     const input$: Observable<string> = this.searchControl.valueChanges;
 
-    input$.subscribe(e => console.log(e));
+    this.results$ = input$.pipe(
+      filter(term => term.length >= 3),
+      debounceTime(250),
+      distinctUntilChanged(),
+      tap(() => this.loading = true),
+      switchMap(term => this.bs.search(term)),
+      tap(() => this.loading = false)
+    );
   }
 
   ngOnInit(): void {
