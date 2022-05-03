@@ -22,12 +22,19 @@ export class CreatingComponent {
 
     /******************************/
 
+    /*function myOf(...args: any[]) {
+      return new Observable(sub => {
+        args.forEach(e => sub.next(e));
+        sub.complete();
+      })
+    }*/
+
 
     // of('A', 'B', 'C', 'D')
     // from(['Hallo', 'Welt', 'Angular'])
     // interval(1000) // ---0---1---2---3---4--- ...
     // timer(2000) // ------0|
-    // timer(0, 1000) // 0---1---2---3---4--- ...
+    // timer(2000, 1000) // ------0---1---2---3---4--- ...
 
     timer(0, 1000).pipe(
       map(e => e * 3),
@@ -72,7 +79,17 @@ export class CreatingComponent {
 
     const myObservable$ = new Observable(producer);
     // myObservable$.subscribe(obs);
+    // myObservable$.subscribe(e => console.log(e));
 
+    /* // so KÖNNTE das Observable implementiert sein
+    class MyObservable {
+      constructor(private producer: any) {}
+
+      subscribe(obs: Partial<Observer<unknown>>) {
+        const subscriber = sanitizeObserver(obs);
+        this.producer(subscriber);
+      }
+    }*/
 
 
     /******************************/
