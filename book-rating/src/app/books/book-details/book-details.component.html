@@ -1,9 +1,13 @@
-<ng-container *ngIf="book">
+<ng-container *ngIf="book$ | async as book; else loading">
   <h2>{{ book.title }}</h2>
   <p>
     {{ book.description }}
   </p>
 </ng-container>
+
+<ng-template #loading>
+  Buch wird geladen ...
+</ng-template>
 
 
 <hr>
